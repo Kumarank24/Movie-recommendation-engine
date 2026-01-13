@@ -1,0 +1,49 @@
+/* MovieGrid Styles */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  padding: 80px 40px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 18px;
+  background: rgba(30, 41, 59, 0.5);
+  border-radius: 12px;
+  border: 2px dashed rgba(51, 65, 85, 0.5);
+}
+
+.empty-state p {
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .empty-state {
+    padding: 40px 20px;
+    font-size: 16px;
+  }
+}
